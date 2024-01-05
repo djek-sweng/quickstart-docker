@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+
+  sftp:
+    image: atmoz/sftp:latest
+    command: foo:pass
+    volumes:
+      - $HOME/volumes/sftp:/home/foo/in
+    ports:
+      - "22:22"

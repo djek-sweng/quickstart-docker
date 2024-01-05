@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: pasSworD
+    volumes:
+      - ./mnt:/mnt/me
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer:latest
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 4200:8080
