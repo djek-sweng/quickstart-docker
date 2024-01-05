@@ -14,5 +14,7 @@ services:
   adminer:
     image: adminer:latest
     restart: always
+    depends_on:
+      - db
     ports:
       - 4200:8080
